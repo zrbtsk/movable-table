@@ -2,13 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 
-// const getChecker = async () => {
-//   const checker = (await import('vite-plugin-checker')).default;
-//   return checker({
-//     // конфигурация плагина
-//   });
-// };
-// // const checker = (await import('vite-plugin-checker')).default;
 
 export default defineConfig({
   root: '.',
@@ -20,7 +13,7 @@ export default defineConfig({
     react(),
     svgr(),
   ],
-  base: './',
+  base: '/movable-table/',
   resolve: {
     alias: {
       '@': '/src', // Алиас для удобных импортов

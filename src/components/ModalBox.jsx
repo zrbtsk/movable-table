@@ -1,3 +1,6 @@
+import userIfUndef from '@/assets/images/user.png';
+import closeIcon from '@/assets/images/close.svg';
+
 export const ModalBox = ({ user, modalRef }) => {
 
     const closeModal = () => {
@@ -9,9 +12,9 @@ export const ModalBox = ({ user, modalRef }) => {
     return (
         <div className='modal' ref={modalRef}>
             <div className='modal__content'>
-                <img src="./images/close.svg" alt="close" width='24px' className='modal__close' onClick={() => closeModal()} />
+                <img src={closeIcon} alt="close" width='24px' className='modal__close' onClick={() => closeModal()} />
                 <div className='modal__blank'>
-                    <img src={user.image ? user.image : './images/user.png'} alt="close" width='200px' className='modal__blank__img' onClick={() => closeModal()} />
+                    <img src={user.image ? user.image : {userIfUndef}} alt="user" width='200px' className='modal__blank__img' onClick={() => closeModal()} />
                     <span className="modal__blank__name--firstName">{user.firstName}</span>
                     <span className="modal__blank__name--lastName">{user.lastName}</span>
                     <span className="modal__blank__name--maidenName">{user.maidenName ? user.maidenName : ''}</span>
