@@ -1,15 +1,17 @@
 import { Sorting } from "../Sorting/Sorting";
 import { useGender } from "./use-gender";
 
+import dropdownIcon from '@/assets/images/dropdown.svg';
+
 export const Gender = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
     const { genderRef, handleKeyDownGender, isMenuOpenGender, toggleMenuGender, setIsMenuOpenGender } = useGender()
 
     return (
         <div className="gender" ref={genderRef}
-            onKeyDown={handleKeyDownGender}>
+            onKeyDown={handleKeyDownGender} onClick={toggleMenuGender}>
             Gender
-            <img src="./images/dropdown.svg" alt="dropdown" width='22px' className={`gender__icon ${isMenuOpenGender ? 'gender__icon--rotated' : ''
-                }`} onClick={toggleMenuGender} />
+            <img src={dropdownIcon} alt="dropdown" width='22px' className={`gender__icon ${isMenuOpenGender ? 'gender__icon--rotated' : ''
+                }`} />
             <div className={`gender__menu ${isMenuOpenGender ? 'gender__menu--visible' : ''
                 }`}>
                 <Sorting sortValue={sortValue} nameSort={"gender"} setMenuOpen={setIsMenuOpenGender} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} />

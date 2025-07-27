@@ -19,7 +19,7 @@ export const Sorting = ({ sortValue, nameSort, setMenuOpen, setUsers, setLimit, 
             />
             <label
                 htmlFor={nameSort === 'gender' ? 'male' : `asc-${sortValue[nameSort].id}`}
-            >Sort Ascending</label>
+            >{ nameSort === 'gender' ? 'Male' : 'Sort Ascending' }</label>
             <input
                 type="radio"
                 name='sort'
@@ -34,7 +34,7 @@ export const Sorting = ({ sortValue, nameSort, setMenuOpen, setUsers, setLimit, 
             />
             <label
                 htmlFor={nameSort === 'gender' ? 'female' : `desc-${sortValue[nameSort].id}`}
-            >Sort Descending</label>
+            >{ nameSort === 'gender' ? 'Female' :'Sort Descending'}</label>
             <input
                 type="radio"
                 name='sort'

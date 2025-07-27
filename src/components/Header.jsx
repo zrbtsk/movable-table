@@ -1,3 +1,5 @@
+import infoIcon from '@/assets/images/info.svg';
+
 export const Header = () => {
     return (
         <header>
@@ -7,7 +9,7 @@ export const Header = () => {
 
             <div className="__block"></div>
             <div className="header__info">
-                <img src="./images/info.svg" alt="info" width='24px' />
+                <img src={infoIcon} alt="info" width='24px' />
             </div>
         </header>
     )

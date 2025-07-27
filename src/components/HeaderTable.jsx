@@ -7,8 +7,6 @@ import { Phone } from "../features/Phone/Phone"
 
 import { useResizing } from "../features/Resizing/use-resizing"
 
-
-
 export const HeaderTable = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
     const { columnWidths, startResizing } = useResizing();
 

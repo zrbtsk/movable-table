@@ -7,7 +7,6 @@ import { Pagination } from '../features/Pagination/Pagination';
 import { usePagination } from '../features/Pagination/use-pagination';
 import { useResizing } from '../features/Resizing/use-resizing';
 
-
 const sortValue = {
     firstName: { name: 'firstName', sort: 'noSort', id: '1' },
     lastName: { name: 'lastName', sort: 'noSort', id: '2' },
@@ -15,7 +14,6 @@ const sortValue = {
     age: { name: 'age', sort: 'noSort', id: '4' },
     gender: { name: 'gender', sort: 'noSort' },
     phone: { name: 'phone', sort: 'noSort', id: '5' },
-
 }
 
 export const Table = () => {

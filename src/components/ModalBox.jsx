@@ -1,4 +1,3 @@
-
 export const ModalBox = ({ user, modalRef }) => {
 
     const closeModal = () => {
