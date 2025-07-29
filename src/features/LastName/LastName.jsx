@@ -9,10 +9,10 @@ export const LastName = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
 
     return (
         <div className="lastName" ref={lastNameRef}
-            onKeyDown={handleKeyDownLastName} onClick={toggleMenuLastName}>
+            onKeyDown={handleKeyDownLastName}>
             LastName
             <img src={dropdownIcon} alt="dropdown" width='22px' className={`lastName__icon ${isMenuOpenLastName ? 'lastName__icon--rotated' : ''
-                }`} />
+                }`} onClick={toggleMenuLastName} />
             <div className={`lastName__menu ${isMenuOpenLastName ? 'lastName__menu--visible' : ''
                 }`}>
                 <div className="search">

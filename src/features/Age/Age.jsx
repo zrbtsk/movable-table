@@ -11,10 +11,10 @@ export const Age = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
 
     return (
         <div className="age" ref={ageRef}
-            onKeyDown={handleKeyDownAge} onClick={toggleMenuAge} >
+            onKeyDown={handleKeyDownAge} >
             Age
             <img src={dropdownIcon} alt="dropdown" width='22px' className={`age__icon ${isMenuOpenAge ? 'age__icon--rotated' : ''
-                }`}/>
+                }`} onClick={toggleMenuAge}/>
             <div className={`age__menu ${isMenuOpenAge ? 'age__menu--visible' : ''
                 }`}>
                 <div className="search">

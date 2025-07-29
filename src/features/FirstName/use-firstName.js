@@ -15,7 +15,8 @@ export const useFirstName = (setUsers, setLimit, setTotalUsers, sortValue) => {
     // открытие/ закрытие dropdown при клике вне
     useEffect(() => {
         const handleClickOutsideFirstName = (event) => {
-            if (
+            console.log(firstNameRef.current);
+            if ( 
                 firstNameRef.current &&
                 !firstNameRef.current.contains(event.target)
             ) {

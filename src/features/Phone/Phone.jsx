@@ -8,7 +8,7 @@ export const Phone = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
 
     return (
         <div className="phone" ref={phoneRef}
-            onKeyDown={handleKeyDownPhone} onClick={toggleMenuPhone}>
+            onKeyDown={handleKeyDownPhone}>
             Phone
             <img src={dropdownIcon} alt="dropdown" width='22px' className={`phone__icon ${isMenuOpenPhone ? 'phone__icon--rotated' : ''
                 }`} onClick={toggleMenuPhone} />

@@ -8,10 +8,10 @@ export const Gender = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
 
     return (
         <div className="gender" ref={genderRef}
-            onKeyDown={handleKeyDownGender} onClick={toggleMenuGender}>
+            onKeyDown={handleKeyDownGender}>
             Gender
             <img src={dropdownIcon} alt="dropdown" width='22px' className={`gender__icon ${isMenuOpenGender ? 'gender__icon--rotated' : ''
-                }`} />
+                }`} onClick={toggleMenuGender} />
             <div className={`gender__menu ${isMenuOpenGender ? 'gender__menu--visible' : ''
                 }`}>
                 <Sorting sortValue={sortValue} nameSort={"gender"} setMenuOpen={setIsMenuOpenGender} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} />
