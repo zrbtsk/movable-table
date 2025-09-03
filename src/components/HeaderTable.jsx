@@ -6,6 +6,7 @@ import { MaidenName } from "../features/MaidenName/MaidenName"
 import { Phone } from "../features/Phone/Phone"
 
 import { useResizing } from "../features/Resizing/use-resizing"
+import { Tooltip } from "./Tooltip"
 
 export const HeaderTable = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
     const { columnWidths, startResizing } = useResizing();
@@ -14,42 +15,48 @@ export const HeaderTable = ({ sortValue, setUsers, setLimit, setTotalUsers }) =>
         <thead>
             <tr>
                 <th style={{ width: `${columnWidths.firstName}px`, position: 'relative' }}>
-                    <FirstName sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} />
+                    <FirstName sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} columnWidths={columnWidths}/>
+                    { columnWidths.firstName < 100 ? <Tooltip name={'firstName'} /> : ''}
                     <div
                         className="resize-handle"
                         onMouseDown={(e) => startResizing('firstName', e)}
                     />
                 </th>
                 <th style={{ width: `${columnWidths.lastName}px`, position: 'relative' }}>
-                    <LastName sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} />
+                    <LastName sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} columnWidths={columnWidths} />
+                    { columnWidths.lastName < 100 ? <Tooltip name={'lastName'} /> : ''}
                     <div
                         className="resize-handle"
                         onMouseDown={(e) => startResizing('lastName', e)}
                     />
                 </th>
                 <th style={{ width: `${columnWidths.maidenName}px`, position: 'relative' }}>
-                    <MaidenName sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} />
+                    <MaidenName sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} columnWidths={columnWidths} />
+                    { columnWidths.maidenName < 100 ? <Tooltip name={'maidenName'} /> : ''}
                     <div
                         className="resize-handle"
                         onMouseDown={(e) => startResizing('maidenName', e)}
                     />
                 </th>
                 <th style={{ width: `${columnWidths.age}px`, position: 'relative' }}>
-                    <Age sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} />
+                    <Age sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} columnWidths={columnWidths} />
+                    { columnWidths.age === 50 ? <Tooltip name={'age'} /> : ''}
                     <div
                         className="resize-handle"
                         onMouseDown={(e) => startResizing('age', e)}
                     />
                 </th>
                 <th style={{ width: `${columnWidths.gender}px`, position: 'relative' }}>
-                    <Gender sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} />
+                    <Gender sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} columnWidths={columnWidths} />
+                    { columnWidths.gender < 70 ? <Tooltip name={'gender'} /> : ''}
                     <div
                         className="resize-handle"
                         onMouseDown={(e) => startResizing('gender', e)}
                     />
                 </th>
                 <th style={{ width: `${columnWidths.phone}px`, position: 'relative' }}>
-                    <Phone sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} />
+                    <Phone sortValue={sortValue} setUsers={setUsers} setLimit={setLimit} setTotalUsers={setTotalUsers} columnWidths={columnWidths} />
+                    { columnWidths.phone < 60 ? <Tooltip name={'phone'} /> : ''}
                     <div
                         className="resize-handle"
                         onMouseDown={(e) => startResizing('phone', e)}

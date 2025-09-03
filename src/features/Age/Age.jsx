@@ -5,14 +5,14 @@ import dropdownIcon from '@/assets/images/dropdown.svg';
 import searchIcon from '@/assets/images/search.svg';
 
 
-export const Age = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
+export const Age = ({ sortValue, setUsers, setLimit, setTotalUsers, columnWidths }) => {
 
     const { setAge, toggleMenuAge, handleKeyDownAge, ageRef, isMenuOpenAge, searchByAge, age, setIsMenuOpenAge } = useAge(setUsers, sortValue, setLimit, setTotalUsers)
 
     return (
         <div className="age" ref={ageRef}
             onKeyDown={handleKeyDownAge} >
-            Age
+                { columnWidths.age === 50 ? '' : 'Age' }
             <img src={dropdownIcon} alt="dropdown" width='22px' className={`age__icon ${isMenuOpenAge ? 'age__icon--rotated' : ''
                 }`} onClick={toggleMenuAge}/>
             <div className={`age__menu ${isMenuOpenAge ? 'age__menu--visible' : ''

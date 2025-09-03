@@ -4,13 +4,13 @@ import { useMaidenName } from "./use-maidenName"
 import dropdownIcon from '@/assets/images/dropdown.svg';
 import searchIcon from '@/assets/images/search.svg';
 
-export const MaidenName = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
+export const MaidenName = ({ sortValue, setUsers, setLimit, setTotalUsers, columnWidths }) => {
     const { maidenName, maidenNameRef, handleKeyDownMaidenName, isMenuOpenMaidenName, searchByMaidenName, setMaidenName, toggleMenuMaidenName, setIsMenuOpenMaidenName } = useMaidenName(setUsers, setLimit, setTotalUsers, sortValue)
 
     return (
         <div className="maidenName" ref={maidenNameRef}
             onKeyDown={handleKeyDownMaidenName}  >
-            MaidenName
+                { columnWidths.maidenName < 100 ? '' : 'MaidenName' }
             <img src={dropdownIcon} alt="dropdown" width='22px' className={`maidenName__icon ${isMenuOpenMaidenName ? 'maidenName__icon--rotated' : ''
                 }`} onClick={toggleMenuMaidenName} />
             <div className={`maidenName__menu ${isMenuOpenMaidenName ? 'maidenName__menu--visible' : ''

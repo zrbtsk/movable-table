@@ -4,13 +4,13 @@ import { useLastName } from "./use-lastName"
 import dropdownIcon from '@/assets/images/dropdown.svg';
 import searchIcon from '@/assets/images/search.svg';
 
-export const LastName = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
+export const LastName = ({ sortValue, setUsers, setLimit, setTotalUsers, columnWidths }) => {
     const { lastNameRef, handleKeyDownLastName, isMenuOpenLastName, toggleMenuLastName, setLastName, searchByLastName, lastName, setIsMenuOpenLastName } = useLastName(setUsers, setLimit, setTotalUsers, sortValue);
 
     return (
         <div className="lastName" ref={lastNameRef}
             onKeyDown={handleKeyDownLastName}>
-            LastName
+                { columnWidths.lastName < 100 ? '' : 'LastName' }
             <img src={dropdownIcon} alt="dropdown" width='22px' className={`lastName__icon ${isMenuOpenLastName ? 'lastName__icon--rotated' : ''
                 }`} onClick={toggleMenuLastName} />
             <div className={`lastName__menu ${isMenuOpenLastName ? 'lastName__menu--visible' : ''

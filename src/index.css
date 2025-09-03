@@ -27,8 +27,8 @@ header {
   font-size: 2.2rem;
   box-shadow: inset -3px -3px 3px 0 rgba(255, 255, 255, 0.7),
     inset 2px 2px 2px 0 rgba(40, 55, 74, 1);
-    border-radius: 10px;
-    padding: 8px;
+  border-radius: 10px;
+  padding: 8px;
 }
 .header__info {
   transition: transform 0.2s;
@@ -43,7 +43,7 @@ header {
 /* таблица */
 table {
   table-layout: fixed;
-  width: calc(100% - 20px);
+  /* width: calc(100% - 20px); */
   font-size: 1.4rem;
   margin: 20px auto;
   padding: 10px 20px 20px;
@@ -120,7 +120,7 @@ tr:hover {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 105px;
+  /* width: 105px; */
   gap: 7px;
   margin: 0 auto;
 
@@ -138,8 +138,7 @@ tr:hover {
   background-color: rgb(40, 55, 74);
   border-radius: 10px;
   color: rgb(217, 217, 217);
-  box-shadow: 
-    6px 6px 8px 0 rgba(40, 55, 74, 0.8);
+  box-shadow: 6px 6px 8px 0 rgba(40, 55, 74, 0.8);
 
   position: absolute;
   top: 10px;
@@ -174,6 +173,7 @@ tr:hover {
 .age__icon,
 .phone__icon {
   transform: none;
+  position: relative;
 }
 .firstName__icon--rotated,
 .lastName__icon--rotated,
@@ -195,9 +195,9 @@ tr:hover {
   font-weight: 400;
 }
 .sort__input {
-    -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 15px;
   height: 15px;
   background: rgb(40, 55, 74);
@@ -209,14 +209,13 @@ tr:hover {
   background-color: rgb(217, 217, 217);
   box-shadow: inset -3px -3px 3px 0 rgba(255, 255, 255, 0.8),
     inset 2px 2px 3px 0 rgba(40, 55, 74, 0.8);
-    border: none;
+  border: none;
 }
 .sort__input:hover {
   background-color: rgb(217, 217, 217);
   box-shadow: inset -3px -3px 3px 0 rgba(255, 255, 255, 0.8),
     inset 2px 2px 3px 0 rgba(40, 55, 74, 0.8);
-        border: none;
-
+  border: none;
 }
 /* стилизация полей input и кнопок */
 .search {
@@ -240,7 +239,6 @@ tr:hover {
   font-size: 1.2rem;
   font-family: 'Montserrat', sans-serif;
   color: rgb(40, 55, 74);
-  
 }
 .search__input:focus {
   box-shadow: inset -3px -3px 3px 0 rgba(255, 255, 255, 0.8),
@@ -265,17 +263,17 @@ tr:hover {
 .search__btn:hover {
   box-shadow: inset -3px -3px 3px 0 rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px 0 rgba(0, 0, 0, 0.8);
-    border: none;
+  border: none;
 }
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type="text"]::-webkit-clear-button {
+input[type='text']::-webkit-clear-button {
   display: none;
 }
-input[type="search"]::-webkit-search-cancel-button {
+input[type='search']::-webkit-search-cancel-button {
   display: none;
 }
 
@@ -299,12 +297,12 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-bottom: 40px;
 }
 .pagination__page {
-width: 25px;
-height: 25px;
-border-radius: 5px;
-display: flex;
-justify-content: center;
-align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: inset -3px -3px 3px 0 rgba(255, 255, 255, 0.7),
     inset 2px 2px 2px 0 rgba(40, 55, 74, 1);
 }
@@ -331,51 +329,51 @@ align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal__content {
-    width: 610px;
-    min-height: 500px;
-    border-radius: 10px;
-    background-color:  rgb(217, 217, 217);
-    color: rgb(40, 55, 74);
-    font-size: 1.6rem;
-    margin: auto;
-    box-shadow: -6px -6px 6px 0 rgba(255, 255, 255, 1),
+  width: 610px;
+  min-height: 500px;
+  border-radius: 10px;
+  background-color: rgb(217, 217, 217);
+  color: rgb(40, 55, 74);
+  font-size: 1.6rem;
+  margin: auto;
+  box-shadow: -6px -6px 6px 0 rgba(255, 255, 255, 1),
     6px 6px 8px 0 rgba(40, 55, 74, 0.8);
-    padding: 20px;
-    transition: width 0.3 ease height 0.3 ease;
+  padding: 20px;
+  transition: width 0.3 ease height 0.3 ease;
 }
 .modal__close {
-    color: rgb(40, 55, 74);
-    float: right;
-    font-size: 30px;
-    font-weight: bold;
+  color: rgb(40, 55, 74);
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
 }
 .modal__blank {
   display: grid;
   word-break: break-all;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: repeat(10,1fr);
-  grid-template-areas: 'img firstName firstName firstName'
-  'img lastName lastName lastName'
-  'img maidenName maidenName maidenName'
-  'img numAge numHeight numWeight'
-  'img age height weight'
-  'phone numPhone numPhone numPhone'
-  'email textEmail textEmail textEmail'
-  'country textCountry textCountry textCountry'
-  'state textState textState textState'
-  'city textCity textCity textCity'
-  'address textAddress textAddress textAddress'
-  ;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-areas:
+    'img firstName firstName firstName'
+    'img lastName lastName lastName'
+    'img maidenName maidenName maidenName'
+    'img numAge numHeight numWeight'
+    'img age height weight'
+    'phone numPhone numPhone numPhone'
+    'email textEmail textEmail textEmail'
+    'country textCountry textCountry textCountry'
+    'state textState textState textState'
+    'city textCity textCity textCity'
+    'address textAddress textAddress textAddress';
   gap: 0px 20px;
   margin: 20px 10px;
   justify-content: flex-start;
   align-items: center;
 }
 .modal__blank__img {
-    border-radius: 10px;
-    border: 1px solid rgb(40, 55, 74);
-    grid-area: img;
-    margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(40, 55, 74);
+  grid-area: img;
+  margin-bottom: 20px;
 }
 .modal__blank__name--firstName,
 .modal__blank__name--lastName,
@@ -402,68 +400,99 @@ align-items: center;
   font-size: 1.6rem;
   margin-bottom: 20px;
 }
-.modal__blank__name--firstName{
-grid-area: firstName;
+.modal__blank__name--firstName {
+  grid-area: firstName;
 }
-.modal__blank__name--lastName{
-grid-area: lastName;
+.modal__blank__name--lastName {
+  grid-area: lastName;
 }
-.modal__blank__name--maidenName{
-grid-area: maidenName;
-}
-
-.modal__blank__age--num{
-grid-area: numAge;
-}
-.modal__blank__height--num{
-grid-area: numHeight;
-}
-.modal__blank__weight--num{
-grid-area: numWeight;
+.modal__blank__name--maidenName {
+  grid-area: maidenName;
 }
 
-.modal__blank__age{
-grid-area: age;
+.modal__blank__age--num {
+  grid-area: numAge;
 }
-.modal__blank__height{
-grid-area: height;
+.modal__blank__height--num {
+  grid-area: numHeight;
 }
-.modal__blank__weight{
-grid-area: weight;
+.modal__blank__weight--num {
+  grid-area: numWeight;
 }
-.modal__blank__phone{
-grid-area: phone;
+
+.modal__blank__age {
+  grid-area: age;
 }
-.modal__blank__email{
-grid-area: email;
+.modal__blank__height {
+  grid-area: height;
 }
-.modal__blank__address{
-grid-area: address;
+.modal__blank__weight {
+  grid-area: weight;
 }
-.modal__blank__country{
-grid-area: country;
+.modal__blank__phone {
+  grid-area: phone;
 }
-.modal__blank__state{
-grid-area: state;
+.modal__blank__email {
+  grid-area: email;
 }
-.modal__blank__city{
-grid-area: city;
+.modal__blank__address {
+  grid-area: address;
+}
+.modal__blank__country {
+  grid-area: country;
+}
+.modal__blank__state {
+  grid-area: state;
+}
+.modal__blank__city {
+  grid-area: city;
 }
 .modal__blank__phone--num {
-grid-area: numPhone;
+  grid-area: numPhone;
 }
 .modal__blank__email--text {
-grid-area: textEmail;
+  grid-area: textEmail;
 }
 .modal__blank__address--text {
-grid-area: textAddress;
+  grid-area: textAddress;
 }
 .modal__blank__country--text {
-grid-area: textCountry;
+  grid-area: textCountry;
 }
 .modal__blank__city--text {
-grid-area: textCity;
+  grid-area: textCity;
 }
 .modal__blank__state--text {
-grid-area: textState;
+  grid-area: textState;
+}
+
+.tooltip {
+  visibility: hidden;
+
+  background-color: rgb(40, 55, 74);
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 400;
+  opacity: 0;
+
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  z-index: 1;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.tooltip::after {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(40, 55, 74) transparent transparent transparent;
+}
+
+th:hover .tooltip {
+  visibility: visible;
+  opacity: 0.9;
 }

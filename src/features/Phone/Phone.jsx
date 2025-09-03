@@ -3,13 +3,13 @@ import { usePhone } from "./use-phone"
 
 import dropdownIcon from '@/assets/images/dropdown.svg';
 
-export const Phone = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
+export const Phone = ({ sortValue, setUsers, setLimit, setTotalUsers, columnWidths }) => {
     const { phoneRef, handleKeyDownPhone, isMenuOpenPhone, toggleMenuPhone, setIsMenuOpenPhone } = usePhone()
 
     return (
         <div className="phone" ref={phoneRef}
             onKeyDown={handleKeyDownPhone}>
-            Phone
+                { columnWidths.phone < 60 ? '' : 'Phone' }
             <img src={dropdownIcon} alt="dropdown" width='22px' className={`phone__icon ${isMenuOpenPhone ? 'phone__icon--rotated' : ''
                 }`} onClick={toggleMenuPhone} />
             <div className={`phone__menu ${isMenuOpenPhone ? 'phone__menu--visible' : ''

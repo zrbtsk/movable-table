@@ -1,3 +1,4 @@
+
 import { Sorting } from "../Sorting/Sorting";
 import { useFirstName } from "./use-firstName"
 
@@ -5,13 +6,13 @@ import dropdownIcon from '@/assets/images/dropdown.svg';
 import searchIcon from '@/assets/images/search.svg';
 
 
-export const FirstName = ({ sortValue, setUsers, setLimit, setTotalUsers }) => {
+export const FirstName = ({ sortValue, setUsers, setLimit, setTotalUsers, columnWidths }) => {
     const { firstName, firstNameRef, handleKeyDownFirstName, isMenuOpenFirstName, toggleMenuFirstName, setFirstName, searchByFirstName, setIsMenuOpenFirstName } = useFirstName(setUsers, setLimit, setTotalUsers, sortValue)
 
     return (
         <div className="firstName" ref={firstNameRef}
             onKeyDown={handleKeyDownFirstName} >
-            FirstName
+                { columnWidths.firstName < 100 ? '' : 'FirstName' }
             <img src={dropdownIcon} alt="dropdown" width='22px' className={`firstName__icon ${isMenuOpenFirstName ? 'firstName__icon--rotated' : ''
                 }`} onClick={toggleMenuFirstName} />
             <div className={`firstName__menu ${isMenuOpenFirstName ? 'firstName__menu--visible' : ''
